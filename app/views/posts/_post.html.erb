@@ -1,22 +1,16 @@
 <div id="<%= dom_id post %>">
-<h2>
-    <%= post.title %>
-</h2>
-<h4>
-  Posted by: <%= link_to post.user.name, user_path(post.user) %>
-</h4>
-<h6>
-  <%= pluralize(post.views, "view") %>
-</h6>
+  <h2 class="mb-3"><%= post.title %></h2>
+  <h4 class="text-muted mb-3">
+    Posted by: <%= link_to post.user.name, user_path(post.user) %>
+  </h4>
+  <h6 class="text-muted mb-3"><%= pluralize(post.views, "view") %></h6>
 
   <div>
+    <%= post.body.html_safe %>
 
-  <%= post.body %>
-  
-    <p>
+    <p class="text-muted mt-3">
       <strong>Created at:</strong>
       <%= post.created_at %>
     </p>
   </div>
-
 </div>

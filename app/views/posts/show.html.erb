@@ -1,12 +1,25 @@
 <section class="container">
-  <%= render @post %>
-
-  <div>
-    <%= link_to "Edit this post", edit_post_path(@post) %> | <%= link_to "Back
-    to posts", posts_path %> <%= button_to "Destroy this post", @post, method:
-    :delete %>
+  <div class="row my-4 border p-3 rounded shadow">
+    <div class="col-md-8"><%= render @post %></div>
+    <div class="col-md-4">
+      <div class="mb-4">
+        <%= link_to "Edit this post", edit_post_path(@post), class: "btn
+        btn-primary" %>
+      </div>
+      <div class="mb-4">
+        <%= link_to "Back to posts", posts_path, class: "btn btn-secondary" %>
+      </div>
+      <div>
+        <%= button_to "Destroy this post", @post, method: :delete, class: "btn
+        btn-danger" %>
+      </div>
+    </div>
   </div>
 
-  <%= render 'comments/form', post: @post %> <% @comments.each do |comment| %>
-  <%= render 'comments/comment', post: @post, comment: comment %> <% end %>
+  <div class="mt-4 my-4 border p-3 rounded shadow">
+    <%= render 'comments/form', post: @post, comment: @post.comments.build,
+    submit_label: "Reply" %> <% @comments.each do |comment| %>
+    <h3 class="mb-3 mt-3 text-secondary">Comments</h3>
+    <%= render 'comments/comment', post: @post, comment: comment %> <% end %>
+  </div>
 </section>

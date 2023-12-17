@@ -1,15 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<p class="text-success"><%= notice %></p>
 <section class="container">
-  <h1>Posts</h1>
+  <h1 class="mb-4">Posts</h1>
 
-  <div id="posts">
-    <% @posts.each do |post| %>
-      <%= render post %>
-      <p>
-        <%= link_to "Show this post", post %>
-      </p>
-    <% end %>
+  <div class="row" id="posts">
+      <div class="col-md-6 mb-4"></div>
+          <% @posts.each do |post| %> <%= render post %>
+          <p><%= link_to "Show this post", post, class: "btn btn-primary" %></p>
+          <% end %>
+      </div>
   </div>
 
-  <%= link_to "New post", new_post_path %>
+  <%= link_to "New post", new_post_path, class: "btn btn-success" %>
 </section>

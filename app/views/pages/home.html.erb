@@ -1,10 +1,32 @@
 <section class="container">
+  <h1>Personal Home Page</h1>
+  <p>Welcome to my personal home page. Feel free to explore!</p>
 
-    <h1>Personal Home Page</h1>
-    <p>Find me and check out my blog!</p>
+  <%= link_to "About me", about_path, class: "btn btn-secondary" %>
+  <!-- kl -->
+  <%= link_to "Blog", posts_path, class: "btn btn-primary" %>
 
-    <%= link_to "About me", about_path, class: "btn btn-secondary" %>
+  <div class="mt-5">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate web developer with a love for technology and creativity.
+      I enjoy building web applications and exploring new technologies to create
+      exciting and innovative solutions.
+    </p>
+  </div>
 
-    <%= link_to "Blog", posts_path, class: "btn btn-primary" %>
-
+  <div class="mt-5">
+    <h2>Latest Blog Posts</h2>
+    <ul>
+      <li>
+        <a href="#">Introduction to Web Development</a>
+      </li>
+      <li>
+        <a href="#">Building Responsive Websites with Bootstrap</a>
+      </li>
+      <li>
+        <a href="#">Exploring the World of JavaScript</a>
+      </li>
+    </ul>
+  </div>
 </section>
